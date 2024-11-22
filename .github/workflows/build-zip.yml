@@ -21,4 +21,5 @@ jobs:
           npm run build
 
       - name: Generate zip
-        uses: 10up/action-wordpress-plugin-build-zip@stable
+        uses: ncipollo/release-action@v1
+
