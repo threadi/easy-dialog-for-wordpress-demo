@@ -16,6 +16,7 @@ jobs:
       - name: Build plugin # Remove or modify this step as needed
         run: |
           composer install --no-dev
+          cd vendor/threadi/easy-dialog-for-wordpress/
           npm install
           npm run build
 
