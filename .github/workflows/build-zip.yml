@@ -21,7 +21,10 @@ jobs:
           npm run build
 
       - name: ZIP plugin
-        run: zip -r -q release.zip .
+        run: |
+          zip -r -q ${{ github.event.repository.name }}.zip . -x ".git/*" ".github/*" "phpcs.xml" "composer.json" "composer.lock" ".gitignore" "vendor"
+          zip -u -q ${{ github.event.repository.name }}.zip vendor/composer
+          zip -u -q ${{ github.event.repository.name }}.zip vendor/threadi/easy-dialog-for-wordpress/build/
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
