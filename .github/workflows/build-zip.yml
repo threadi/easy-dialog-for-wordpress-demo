@@ -20,8 +20,9 @@ jobs:
           npm install
           npm run build
 
-      - name: Generate zip
-        uses: googleapis/release-please-action@v4
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: simple
+          files: ${{ github.event.repository.name }}.zip
+          name: Release ${{ github.ref_name }}
