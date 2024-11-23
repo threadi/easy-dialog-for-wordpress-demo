@@ -20,13 +20,13 @@ jobs:
           npm install
           npm run build
 
-      - run: mkdir ${{ github.event.repository.name }}-build && rsync -a . ${{ github.event.repository.name }}-build
-      - run: cd ${{ github.event.repository.name }}-build && zip -r ../${{ github.event.repository.name }}.zip * -x "${{ github.event.repository.name }}-build/*" && cd ..
-      - run: rm -rf ${{ github.event.repository.name }}-build
-
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v2
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: ${{ github.event.repository.name }}.zip
-          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
