@@ -23,7 +23,7 @@ jobs:
       - name: ZIP plugin
         run: |
           cd ..
-          zip -r ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/* -x ".git/*" ".github/*" "phpcs.xml" "composer.json" "composer.lock" ".gitignore" "vendor/*"
+          zip -r ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/* -x "*/.git/*" "*/.github/*" "*/phpcs.xml" "*/composer.json" "*/composer.lock" "*/.gitignore" "*/vendor/*"
           zip -u ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/vendor/composer/*
           zip -u ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/vendor/threadi/easy-dialog-for-wordpress/build/*
 
