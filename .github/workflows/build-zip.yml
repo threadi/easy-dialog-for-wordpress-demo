@@ -20,8 +20,13 @@ jobs:
           npm install
           npm run build
 
+      - name: ZIP plugin
+        run: zip -r -q release.zip .
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: release.zip
