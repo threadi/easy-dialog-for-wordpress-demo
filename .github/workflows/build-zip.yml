@@ -22,9 +22,10 @@ jobs:
 
       - name: ZIP plugin
         run: |
-          zip -r -q ${{ github.event.repository.name }}.zip . -x ".git/*" ".github/*" "phpcs.xml" "composer.json" "composer.lock" ".gitignore" "vendor"
-          zip -u -q ${{ github.event.repository.name }}.zip vendor/composer
-          zip -u -q ${{ github.event.repository.name }}.zip vendor/threadi/easy-dialog-for-wordpress/build/
+          cd ..
+          zip -r -q ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/* -x ".git/*" ".github/*" "phpcs.xml" "composer.json" "composer.lock" ".gitignore" "vendor/*"
+          zip -u -q ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/vendor/composer/*
+          zip -u -q ${{ github.event.repository.name }}.zip ${{ github.event.repository.name }}/vendor/threadi/easy-dialog-for-wordpress/build/*
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
