@@ -21,12 +21,7 @@ jobs:
           npm run build
 
       - name: Generate zip
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: googleapis/release-please-action@v4
         with:
-          release_name: Release ${{ github.ref }}
-          tag_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
+          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
+          release-type: simple
