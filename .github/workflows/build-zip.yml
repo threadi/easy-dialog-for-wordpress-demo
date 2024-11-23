@@ -23,5 +23,5 @@ jobs:
       - name: Generate zip
         uses: googleapis/release-please-action@v4
         with:
-          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: simple
