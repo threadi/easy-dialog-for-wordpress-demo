@@ -4,15 +4,19 @@ This repository contains a WordPress demo plugin for [Easy Dialog for WordPress]
 
 ## Use the demo
 
-1. Download the actual release ZIP (not the source ZIP).
+1. Download [the latest release ZIP](https://github.com/threadi/easy-dialog-for-wordpress-demo/releases/) (not the source ZIP).
 2. Install it in your WordPress and activate it.
 3. You will see a demo link on your dashboard.
 
-## Use it for development
+## Use the demo for development
 
 1. Checkout the repository in your development environment in the plugin directory or download the actual source ZIP.
 2. Run `composer install` to get the sources.
-3. Change to directory `vendor/threadi/easy-dialog-for-woocommerce/`
+3. Change to directory `vendor/threadi/easy-dialog-for-wordpress/`
 4. Run there `npm i` and `npm run build`
 5. Go to the backend of your development environment and activate the plugin.
 6. You will see a demo link on your dashboard.
+
+## Use Easy Dialog for WordPress in your own project
+
+Follow the instructions in the [Easy Dialog for WordPress repository](https://github.com/threadi/easy-dialog-for-wordpress).
