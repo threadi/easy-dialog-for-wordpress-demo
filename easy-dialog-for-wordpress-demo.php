@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name:       Easy Block Dialog for WordPress Example
- * Description:       Example usage of Easy Block Dialog for WordPress.
+ * Plugin Name:       Easy Dialog for WordPress Demo
+ * Description:       Example usage of Easy Dialog for WordPress.
  * Requires at least: 5.0
  * Requires PHP:      8.0
- * Version:           1.0.10
+ * Version:           1.0.11
  * Author:            Thomas Zwirner
  * Author URI:        https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
@@ -33,7 +33,7 @@ function edfwd_add_dashboard_widgets(): void {
 add_action( 'wp_dashboard_setup', 'edfwd_add_dashboard_widgets' );
 
 /**
- * Show link to start demo dialog from dashboard.
+ * Show the link to start the demo dialog from the dashboard.
  *
  * @return void
  */
@@ -48,7 +48,7 @@ function edfwd_dashboard(): void {
             array(
                 'action' => 'closeDialog();',
                 'variant' => 'primary',
-                'text' => __( 'OK to close it', 'easy-dialog-for-wordpress-demo' ),
+                'text' => __( 'Click here to close it', 'easy-dialog-for-wordpress-demo' ),
             )
         )
     );
@@ -66,20 +66,20 @@ function edfwd_dialog_embed(): void {
     $path = trailingslashit(plugin_dir_path(__FILE__)).'vendor/threadi/easy-dialog-for-wordpress/';
     $url = trailingslashit(plugin_dir_url(__FILE__)).'vendor/threadi/easy-dialog-for-wordpress/';
 
-    // bail if path does not exist.
+    // bail if the path does not exist.
     if( ! file_exists( $path ) ) {
         return;
     }
 
-    // get assets path.
+    // get the path to the assets.
     $script_asset_path = $path . 'build/index.asset.php';
 
-    // bail if assets does not exist.
+    // bail if assets do not exist.
     if( ! file_exists( $script_asset_path ) ) {
         return;
     }
 
-    // embed the dialog-components JS-script.
+    // embed the dialog-components JS script.
     $script_asset      = require( $script_asset_path );
     wp_enqueue_script(
         'easy-dialog-for-wordpress',
@@ -89,7 +89,7 @@ function edfwd_dialog_embed(): void {
         true
     );
 
-    // embed the dialog-components CSS-script.
+    // embed the dialog-components CSS script.
     $admin_css      = $url . 'build/style-index.css';
     $admin_css_path = $path . 'build/style-index.css';
     wp_enqueue_style(
