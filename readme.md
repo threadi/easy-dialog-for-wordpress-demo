@@ -4,7 +4,7 @@ This repository contains a WordPress demo plugin for [Easy Dialog for WordPress]
 
 ## Use the demo
 
-1. Download [the latest release ZIP](https://github.com/threadi/easy-dialog-for-wordpress-demo/releases/) (not the source ZIP).
+1. Download [the latest release ZIP](https://github.com/threadi/easy-dialog-for-wordpress-demo/releases/latest) (not the source ZIP).
 2. Install it in your WordPress and activate it.
 3. You will see a demo link on your dashboard.
 
