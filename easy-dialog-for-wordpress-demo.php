@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       Easy Block Dialog for WordPress Example
- * Description:       Example usage of Easy Block Dialog for WordPress.
+ * Plugin Name:       Easy Dialog for WordPress Example
+ * Description:       Example usage of Easy Dialog for WordPress.
  * Requires at least: 5.0
  * Requires PHP:      8.0
  * Version:           1.0.10
@@ -33,13 +33,14 @@ function edfwd_add_dashboard_widgets(): void {
 add_action( 'wp_dashboard_setup', 'edfwd_add_dashboard_widgets' );
 
 /**
- * Show link to start demo dialog from dashboard.
+ * Show link to start demo dialog from the dashboard.
  *
  * @return void
  */
 function edfwd_dashboard(): void {
-    // create dialog.
+    // create the dialog.
     $dialog = array(
+        'callback' => 'alert("ok");',
         'title' => __( 'Simple Demo Dialog Title', 'easy-dialog-for-wordpress-demo' ),
         'texts' => array(
             '<p>' . __( 'This is a demo dialog.', 'easy-dialog-for-wordpress-demo' ) . '</p>'
@@ -49,7 +50,7 @@ function edfwd_dashboard(): void {
                 'action' => 'closeDialog();',
                 'variant' => 'primary',
                 'text' => __( 'OK to close it', 'easy-dialog-for-wordpress-demo' ),
-            )
+            ),
         )
     );
 
