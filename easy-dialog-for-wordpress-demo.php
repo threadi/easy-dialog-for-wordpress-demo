@@ -4,7 +4,7 @@
  * Description:       Example usage of Easy Dialog for WordPress.
  * Requires at least: 5.0
  * Requires PHP:      8.0
- * Version:           1.0.10
+ * Version:           2.0.0
  * Author:            Thomas Zwirner
  * Author URI:        https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
