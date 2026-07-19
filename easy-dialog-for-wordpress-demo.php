@@ -4,7 +4,7 @@
  * Description:       Example usage of Easy Dialog for WordPress.
  * Requires at least: 5.0
  * Requires PHP:      8.0
- * Version:           1.0.11
+ * Version:           2.0.0
  * Author:            Thomas Zwirner
  * Author URI:        https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
@@ -38,7 +38,7 @@ add_action( 'wp_dashboard_setup', 'edfwd_add_dashboard_widgets' );
  * @return void
  */
 function edfwd_dashboard(): void {
-    // create dialog.
+    // create the dialog.
     $dialog = array(
         'title' => __( 'Simple Demo Dialog Title', 'easy-dialog-for-wordpress-demo' ),
         'texts' => array(
